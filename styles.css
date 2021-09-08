@@ -1,0 +1,106 @@
+body {
+    background-color: #e58e26;
+}
+
+header {
+    text-align: center;
+}
+
+.wrapper {
+    display: flex;
+    background-color: #f6b93b;
+    border: 4px solid;
+}
+
+.wrapper-left {
+}
+
+.clicker-window {
+    background-color: #fad390;
+    height: 500px;
+    width: 300px;
+    padding: 20px;
+}
+
+.upgrade-window {
+    background-color: #f6b93b;
+    height: 540px;
+    width: 400px;
+    border-left: 4px solid;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+
+}
+
+.upgrade-column {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.upgrades {
+    text-align: center;
+    background-color: #fa983a;
+    padding: .75rem;
+    border-radius: 1.5rem;
+    width: 110px;
+}
+
+.upgrade-btn {
+    width: 100px;
+}
+
+.upgrades:hover + .info-card {
+    display: block;
+    background-color: #000000;
+    opacity: 0.5;
+    width: 318px;
+    height: 84px;
+    position: absolute;
+    top: 520px;
+    left: 15px;
+    color: #ffffff;
+    padding: 8px;
+}
+
+.info-card {
+    display: none;
+}
+
+.pizza-btn {
+    background-color: #eb2f06;
+    height: 150px;
+    width: 150px;
+    margin: auto;
+    border: 10px solid #f6b93b;
+    border-radius: 50%;
+}
+
+.pizza-btn:hover {
+    height: 152px;
+    width: 152px;
+}
+
+.pizza-btn:active {
+    height: 150px;
+    width: 150px;
+}
+
+.counter {
+    background-color: #f6b93b;
+    height: 40px;
+    width: 320px;
+    margin: auto;
+    font-size: 1.5em;
+    border-top: 4px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+.dollar-sign {
+    font-size: .75em;
+}
