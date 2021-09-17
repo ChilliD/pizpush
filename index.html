@@ -2,7 +2,13 @@
 <html>
     <head>
         <title>Pizza Pusher</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="icon" type="image/x-icon" href="assets/imgs/favicon.ico">
+        <!--Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Azeret+Mono:wght@200&family=Kaushan+Script&family=Poppins:wght@300&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
@@ -10,16 +16,32 @@
         </header>
         <div class="wrapper">
             <div id="wrapper-left" class="wrapper-left">
+                <div class="window-top">
+                    <p id="username" class="username">Your Name</p>
+                    <div id="counter" class="counter">
+                        <p class="dollar-sign">$ </p><p id="count">0</p>
+                    </div>
+                </div>
                 <div id="clicker-window" class="clicker-window">
                     <div id="pizza-btn" class="pizza-btn" onClick="pizzaClick()"></div>
-                </div>
-                <div id="counter" class="counter">
-                    <p class="dollar-sign">$ </p><p id="count">0.00</p>
                 </div>
             </div>
             <div id="upgrade-window" class="upgrade-window">
                 <div id="store-upgrades" class="upgrade-column">
-                    <h3>Store Upgrades</h3>
+                    <h3 class="upgrade-title">Click Upgrades</h3>
+                    <span class="upgrades">
+                        Auto Clicker <br />
+                        <button id="auto-clicker" class="upgrade-btn" onClick="autoClicker()">Cost: 20</button>
+                    </span>
+                    <div id="clicker-card" class="info-card"></div>
+                    <span class="upgrades">
+                        Click x2 <br />
+                        <button id="double-clickval" class="upgrade-btn" onClick="doubleClickVal()">Cost: 1000</button>
+                    </span>
+                    <div id="click-card" class="info-card"></div>
+                </div>
+                <div id="store-upgrades" class="upgrade-column">
+                    <h3 class="upgrade-title">Store Upgrades</h3>
                     <span class="upgrades">
                         Hire Worker <br />
                         <button id="hire-worker" class="upgrade-btn" onClick="hireWorker()">Cost: 100</button>
@@ -36,42 +58,46 @@
                     </span>
                     <div id="driver-card" class="info-card"></div>
                     <span class="upgrades">
-                        Click x2 <br />
-                        <button id="double-clickval" class="upgrade-btn" onClick="doubleClickVal()">Cost: 1000</button>
-                    </span>
-                    <div id="click-card" class="info-card"></div>
-                    <span class="upgrades">
                         Upgrade Kitchen <br />
                         <button id="upgrade-kitchen" class="upgrade-btn" onClick="newKitchen()">Cost: 5000</button>
                     </span>
                     <div id="kitchen-card" class="info-card"></div>
                 </div>
                 <div id="office-upgrades" class="upgrade-column">
-                    <h3>Office Upgrades</h3>
+                    <h3>Department Upgrades</h3>
                     <span class="upgrades">
-                        Accountant <br />
-                        <button id="accountant" class="upgrade-btn" onClick="upgradeAcct()">Cost: 100</button>
+                        Accounting <br />
+                        <button id="accounting" class="upgrade-btn" onClick="upgradeAccounting()">Cost: 50k</button>
                     </span>
+                    <div id="accounting-card" class="info-card"></div>
                     <span class="upgrades">
-                        Accountant <br />
-                        <button id="accountant" class="upgrade-btn" onClick="upgradeAcct()">Cost: 100</button>
+                        Marketing <br />
+                        <button id="marketing" class="upgrade-btn" onClick="upgradeMarketing()">Cost: 100k</button>
                     </span>
+                    <div id="marketing-card" class="info-card"></div>
                     <span class="upgrades">
-                        Accountant <br />
-                        <button id="accountant" class="upgrade-btn" onClick="upgradeAcct()">Cost: 100</button>
+                        Research <br />
+                        <button id="research" class="upgrade-btn" onClick="upgradeResearch()">Cost: 500k</button>
                     </span>
+                    <div id="research-card" class="info-card"></div>
                     <span class="upgrades">
-                        Accountant <br />
-                        <button id="accountant" class="upgrade-btn" onClick="upgradeAcct()">Cost: 100</button>
+                        Training <br />
+                        <button id="training" class="upgrade-btn" onClick="upgradeTraining()">Cost: 1 mil</button>
                     </span>
+                    <div id="training-card" class="info-card"></div>
                     <span class="upgrades">
-                        Accountant <br />
-                        <button id="accountant" class="upgrade-btn" onClick="upgradeAcct()">Cost: 100</button>
+                        Car Garage <br />
+                        <button id="garage" class="upgrade-btn" onClick="upgradeGarage()">Cost: 50 mil</button>
                     </span>
+                    <div id="garage-card" class="info-card"></div>
                 </div>
             </div>
         </div>
-
+        <footer>
+            &copy; 2021
+            <a href="https://dancocreative.com" target="_blank" class="back-link">
+            Dan Chilla</a>
+        </footer>
         <script src="scripts.js"></script>
     </body>
 </html>
