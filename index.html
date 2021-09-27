@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="styles.css">
         <link rel="icon" type="image/x-icon" href="assets/imgs/favicon.ico">
+        <script src="https://kit.fontawesome.com/7c9507e888.js" crossorigin="anonymous"></script>
         <!--Fonts-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,79 +18,78 @@
         <div class="wrapper">
             <div id="wrapper-left" class="wrapper-left">
                 <div class="window-top">
-                    <p id="username" class="username">Your Name</p>
+                    <div id="username-bar" class="username-bar">
+                        <p id="username" class="username">Your Pizzeria</p>
+                        <button id="edit-name" class="edit-btn" onClick="setUsername()"><i class="fas fa-edit"></i></button>
+                    </div>
                     <div id="counter" class="counter">
                         <p class="dollar-sign">$ </p><p id="count">0</p>
                     </div>
                 </div>
                 <div id="clicker-window" class="clicker-window">
                     <div id="pizza-btn" class="pizza-btn" onClick="pizzaClick()"></div>
+                    <div id="info-window" class="info-card"></div>
                 </div>
             </div>
             <div id="upgrade-window" class="upgrade-window">
-                <div id="store-upgrades" class="upgrade-column">
+                <div id="click-upgrade-wrapper" class="upgrade-wrapper">
                     <h3 class="upgrade-title">Click Upgrades</h3>
-                    <span class="upgrades">
-                        Auto Clicker <br />
-                        <button id="auto-clicker" class="upgrade-btn" onClick="autoClicker()">Cost: 20</button>
-                    </span>
-                    <div id="clicker-card" class="info-card"></div>
-                    <span class="upgrades">
-                        Click x2 <br />
-                        <button id="double-clickval" class="upgrade-btn" onClick="doubleClickVal()">Cost: 1000</button>
-                    </span>
-                    <div id="click-card" class="info-card"></div>
+                    <div id="click-upgrades" class="upgrade-column">
+                        <span class="upgrades">
+                            Auto Clicker <br />
+                            <button id="auto-clicker" class="upgrade-btn" onClick="handleUpgrades(event)">Cost: 20</button>
+                        </span>
+                        <span class="upgrades">
+                            Click x2 <br />
+                            <button id="double-clickval" class="upgrade-btn" onClick="handleUpgrades(event)">Cost: 1000</button>
+                        </span>
+                    </div>
                 </div>
-                <div id="store-upgrades" class="upgrade-column">
+                <div id="store-upgrade-wrapper" class="upgrade-wrapper">
                     <h3 class="upgrade-title">Store Upgrades</h3>
-                    <span class="upgrades">
-                        Hire Worker <br />
-                        <button id="hire-worker" class="upgrade-btn" onClick="hireWorker()">Cost: 100</button>
-                    </span>
-                    <div id="worker-card" class="info-card"></div>
-                    <span class="upgrades">
-                        New Topping <br />
-                        <button id="new-topping" class="upgrade-btn" onClick="newTopping()">Cost: 250</button>
-                    </span>
-                    <div id="topping-card" class="info-card"></div>
-                    <span class="upgrades">
-                        Delivery Driver <br />
-                        <button id="hire-driver" class="upgrade-btn" onClick="hireDriver()">Cost: 600</button>
-                    </span>
-                    <div id="driver-card" class="info-card"></div>
-                    <span class="upgrades">
-                        Upgrade Kitchen <br />
-                        <button id="upgrade-kitchen" class="upgrade-btn" onClick="newKitchen()">Cost: 5000</button>
-                    </span>
-                    <div id="kitchen-card" class="info-card"></div>
+                    <div id="store-upgrades" class="upgrade-column">
+                        <span class="upgrades">
+                            Hire Worker <br />
+                            <button id="hire-worker" class="upgrade-btn" onClick="handleUpgrades(event)">Cost: 100</button>
+                        </span>
+                        <span class="upgrades">
+                            New Topping <br />
+                            <button id="new-topping" class="upgrade-btn" onClick="handleUpgrades(event)">Cost: 250</button>
+                        </span>
+                        <span class="upgrades">
+                            Delivery Driver <br />
+                            <button id="hire-driver" class="upgrade-btn" onClick="handleUpgrades(event)">Cost: 600</button>
+                        </span>
+                        <span class="upgrades">
+                            Kitchen <br />
+                            <button id="upgrade-kitchen" class="upgrade-btn" onClick="handleUpgrades(event)">Cost: 5000</button>
+                        </span>
+                    </div>
                 </div>
-                <div id="office-upgrades" class="upgrade-column">
-                    <h3>Department Upgrades</h3>
-                    <span class="upgrades">
-                        Accounting <br />
-                        <button id="accounting" class="upgrade-btn" onClick="upgradeAccounting()">Cost: 50k</button>
-                    </span>
-                    <div id="accounting-card" class="info-card"></div>
-                    <span class="upgrades">
-                        Marketing <br />
-                        <button id="marketing" class="upgrade-btn" onClick="upgradeMarketing()">Cost: 100k</button>
-                    </span>
-                    <div id="marketing-card" class="info-card"></div>
-                    <span class="upgrades">
-                        Research <br />
-                        <button id="research" class="upgrade-btn" onClick="upgradeResearch()">Cost: 500k</button>
-                    </span>
-                    <div id="research-card" class="info-card"></div>
-                    <span class="upgrades">
-                        Training <br />
-                        <button id="training" class="upgrade-btn" onClick="upgradeTraining()">Cost: 1 mil</button>
-                    </span>
-                    <div id="training-card" class="info-card"></div>
-                    <span class="upgrades">
-                        Car Garage <br />
-                        <button id="garage" class="upgrade-btn" onClick="upgradeGarage()">Cost: 50 mil</button>
-                    </span>
-                    <div id="garage-card" class="info-card"></div>
+                <div id="dept-upgrade-wrapper" class="upgrade-wrapper">
+                    <h3 class="upgrade-title">Dept. Upgrades</h3>
+                    <div id="dept-upgrades" class="upgrade-column">
+                        <span class="upgrades">
+                            Accounting <br />
+                            <button id="accounting" class="upgrade-btn" onClick="handleUpgrades(event)">Cost: 50k</button>
+                        </span>
+                        <span class="upgrades">
+                            Marketing <br />
+                            <button id="marketing" class="upgrade-btn" onClick="handleUpgrades(event)">Cost: 100k</button>
+                        </span>
+                        <span class="upgrades">
+                            Research <br />
+                            <button id="research" class="upgrade-btn" onClick="handleUpgrades(event)">Cost: 500k</button>
+                        </span>
+                        <span class="upgrades">
+                            Training <br />
+                            <button id="training" class="upgrade-btn" onClick="handleUpgrades(event)">Cost: 1 mil</button>
+                        </span>
+                        <span class="upgrades">
+                            Car Garage <br />
+                            <button id="garage" class="upgrade-btn" onClick="handleUpgrades(event)">Cost: 50 mil</button>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
